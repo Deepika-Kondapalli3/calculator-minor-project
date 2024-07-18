@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCalc</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="light">
+    <div class="header light">
+        <img src="./cal_logo.png" class="logo"/>
+        <div>
+            <label for="theme">Switch Theme</label>
+            
+            <select id="theme" onchange="switchTheme()">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+    </div>
+    <div class="container light">
+        <div class="calculator light">
+            <div class="display mt-2 mb-2 d-flex justify-content-end">
+                <input type="text" id="display" readonly class="light">
+            </div>
+            <div>
+                <input type="button" value="AC" class="operator" onclick="clearDisplay()">
+                <input type="button" value="CE" class="operator" onclick="deleteLastCharacter()">
+                <input type="button" value="%" class="light" onclick="appendToDisplay('%')">
+                <input type="button" value="/" class="light" onclick="appendToDisplay('/')">
+            </div>
+            <div>
+                <input type="button" value="7" class="light" onclick="appendToDisplay('7')">
+                <input type="button" value="8" class="light" onclick="appendToDisplay('8')">
+                <input type="button" value="9" class="light" onclick="appendToDisplay('9')">
+                <input type="button" value="x" class="light" onclick="appendToDisplay('*')">
+            </div>
+            <div>
+                <input type="button" value="4" class="light" onclick="appendToDisplay('4')">
+                <input type="button" value="5" class="light" onclick="appendToDisplay('5')">
+                <input type="button" value="6" class="light" onclick="appendToDisplay('6')">
+                <input type="button" value="-" class="light" onclick="appendToDisplay('-')">
+            </div>
+            <div>
+                <input type="button" value="1" class="light" onclick="appendToDisplay('1')">
+                <input type="button" value="2" class="light" onclick="appendToDisplay('2')">
+                <input type="button" value="3" class="light" onclick="appendToDisplay('3')">
+                <input type="button" value="+" class="light" onclick="appendToDisplay('+')">
+            </div>
+            <div>
+                <input type="button" value="00" class="light" onclick="appendToDisplay('00')">
+                <input type="button" value="0" class="light" onclick="appendToDisplay('0')">
+                <input type="button" value="." class="light" onclick="appendToDisplay('.')">
+                <input type="button" value="=" class="equal operator" onclick="calculateResult()">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
